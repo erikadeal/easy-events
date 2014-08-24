@@ -7,6 +7,8 @@ class Easy_Events {
     protected $plugin_slug;
  
     protected $version;
+
+    protected $easy_events_post_type;
  
     public function __construct() {
  
@@ -21,6 +23,7 @@ class Easy_Events {
     private function load_dependencies() {
 
         require_once plugin_dir_path( __FILE__ ) . 'class-easy-events-post-type.php';
+        $this->easy_events_post_type = new Easy_Events_Post_Type();
  
         require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-easy-events-admin.php';
  
